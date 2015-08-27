@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UsingLocalClassName from './UsingLocalClassName';
+import UsingstyleName from './UsingstyleName';
 import UsingDecorator from './UsingDecorator';
 
 ReactDOM.render(<div>
-    <UsingLocalClassName />
+    <UsingstyleName />
     <UsingDecorator />
 </div>, document.querySelector('#app'));

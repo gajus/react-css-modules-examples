@@ -5,9 +5,9 @@ import CSSModules from 'react-css-modules';
 @CSSModules(styles)
 export default class extends React.Component {
     render () {
-        return <div className='car'>
-            <div className='front-door'>front-door</div>
-            <div className='back-door'>back-door</div>
+        return <div localClassName='car'>
+            <div localClassName='front-door'>front-door</div>
+            <div localClassName='back-door'>back-door</div>
         </div>;
     }
 }

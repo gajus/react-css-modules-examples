@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "react": "^0.14.0-beta3",
-    "react-css-modules": "^0.0.1",
+    "react-css-modules": "^2.0.0",
     "react-dom": "^0.14.0-beta3"
   }
 }

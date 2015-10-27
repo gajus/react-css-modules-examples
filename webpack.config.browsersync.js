@@ -1,11 +1,13 @@
 var webpack,
     path,
+    ExtractTextPlugin,
     WriteFilePlugin,
     devServer;
 
 webpack = require('webpack');
 path = require('path');
 ExtractTextPlugin = require('extract-text-webpack-plugin');
+WriteFilePlugin = require('write-file-webpack-plugin');
 
 devServer = {
     contentBase: path.resolve(__dirname, './endpoint'),
@@ -26,8 +28,8 @@ module.exports = {
     context: path.resolve(__dirname, './src'),
     entry: {
         app: [
-            'webpack-dev-server/client?http://' + devServer.host + ':' + devServer.port,
-            'webpack/hot/only-dev-server',
+            'webpack/hot/dev-server',
+            'webpack-hot-middleware/client',
 
             './'
         ]
@@ -38,6 +40,7 @@ module.exports = {
         publicPath: devServer.publicPath
     },
     plugins: [
+        new WriteFilePlugin(),
         new ExtractTextPlugin('app.css', {
             allChunks: true
         }),

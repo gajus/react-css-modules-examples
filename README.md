@@ -1,11 +1,5 @@
 # React CSS Modules Examples
 
-**Issue Fork!** Example code to reproduce an issue with Safari + react-css-modules < v3.7.0.
-
-Updated components don't no receive their [local styles](doc/fail_in_safari.png) (however they do if [dev-tool are open](doc/works_with_devtools_open.png)).
-
----
-
 https://github.com/gajus/react-css-modules
 
 ## Setup
@@ -19,11 +13,5 @@ npm install
 ## Running webpack-dev-server Using React Hot Loader
 
 ```sh
-node ./node_modules/.bin/webpack-dev-server
-```
-
-## Using React Hot Loader and BrowserSync
-
-```sh
-node ./server.js
+npm start
 ```

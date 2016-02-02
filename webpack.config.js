@@ -15,20 +15,19 @@ devServer = {
     publicPath: '/static/',
     historyApiFallback: false,
     host: '127.0.0.1',
+    lazy: true,
     port: 8000,
-    hot: true
+    hot: false
 };
 
 module.exports = {
-    devtool: 'source-map',
+    devtool: 'source-source-map',
     debug: true,
     devServer: devServer,
     context: path.resolve(__dirname, './src'),
     entry: {
         app: [
             'webpack-dev-server/client?http://' + devServer.host + ':' + devServer.port,
-            'webpack/hot/only-dev-server',
-
             './'
         ]
     },
@@ -41,9 +40,6 @@ module.exports = {
         new ExtractTextPlugin('app.css', {
             allChunks: true
         }),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.OldWatchingPlugin(),
         new webpack.NoErrorsPlugin()
     ],
     module: {
@@ -56,7 +52,6 @@ module.exports = {
                 test: /\.js$/,
                 include: path.resolve(__dirname, './src'),
                 loaders: [
-                    'react-hot',
                     'babel'
                 ]
             }

@@ -2,22 +2,21 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './../table.css';
 
-class Table extends React.Component {
+let Table;
 
+Table = class extends React.Component {
     constructor(props) {
+        super(props);
 
-      super(props);
+        this.state = {
+            count: 0
+        };
 
-      this.state = {
-          count: 0
-      };
-
-      // force updates in the component to break safari
-      setInterval(() => {
-        this.setState({
-            count: this.state.count + 1
-        });
-      })
+        setInterval(() => {
+            this.setState({
+                count: this.state.count + 1
+            });
+        }, 10);
     }
 
     render () {

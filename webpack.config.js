@@ -21,7 +21,7 @@ devServer = {
 };
 
 module.exports = {
-    devtool: 'source-source-map',
+    devtool: 'eval-source-map',
     debug: true,
     devServer: devServer,
     context: path.resolve(__dirname, './src'),
